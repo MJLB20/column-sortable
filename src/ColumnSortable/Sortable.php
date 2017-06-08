@@ -78,10 +78,9 @@ trait Sortable
         }
 
         if (isset($model->sortableAs) && in_array($column, $model->sortableAs)) {
-            $query = $query->orderBy($column, $direction);
+            $query = $model->orderBy($column, $direction);//Modification to work with MongoDB
         } elseif ($this->columnExists($model, $column)) {
-            $column = $model->getTable() . '.' . $column;
-            $query = $query->orderBy($column, $direction);
+            $query = $model->orderBy($column, $direction);//Modification to work with MongoDB
         }
 
         return $query;
