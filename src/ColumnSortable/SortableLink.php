@@ -45,7 +45,7 @@ class SortableLink
             )
         );
 
-        return '<a' . $anchorClass . ' href="' . url(Request::path() . '?' . $queryString) . '"' . '>' . htmlentities($title) . $trailingTag;
+        return '<a style="color: #676A6C"' . $anchorClass . ' href="' . url(Request::path() . '?' . $queryString) . '"' . '>' . htmlentities($title) . $trailingTag;
     }
 
     /**
